@@ -5,9 +5,17 @@ namespace App\Domains\TrafficEnforcement\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Domains\TrafficEnforcement\Models\TrafficEnforcementArticle as Article;
+use App\Domains\TrafficEnforcement\Repositories\TrafficEnforcementArticleRepository;
 
 class TrafficEnforcementArticleController extends Controller
 {
+    private $articleRepository;
+
+    public function __construct(TrafficEnforcementArticleRepository $articleRepository)
+    {
+        $this->articleRepository = $articleRepository;
+    }
+
     /**
      * Display a listing of the resource.
      */
