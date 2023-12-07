@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Domains\TrafficEnforcement\Controllers\TrafficEnforcementArticleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('TrafficEnforcementArticle', TrafficEnforcementArticleController::class);
