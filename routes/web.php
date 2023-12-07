@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Domains\TrafficEnforcement\Controllers\TrafficEnforcementArticleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,8 +13,14 @@ use App\Domains\TrafficEnforcement\Controllers\TrafficEnforcementArticleControll
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::view('/', 'welcome');
 
-Route::resource('TrafficEnforcementArticle', TrafficEnforcementArticleController::class);
+Route::view('dashboard', 'dashboard')
+    ->middleware(['auth', 'verified'])
+    ->name('dashboard');
+
+Route::view('profile', 'profile')
+    ->middleware(['auth'])
+    ->name('profile');
+
+require __DIR__.'/auth.php';
