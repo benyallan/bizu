@@ -78,6 +78,6 @@ class TrafficEnforcementArticleRepositoryTest extends TestCase
 
         $this->repository->delete($article->id);
 
-        $this->assertDatabaseMissing('traffic_enforcement_articles', ['id' => $article->id]);
+        $this->assertSoftDeleted('traffic_enforcement_articles', ['id' => $article->id]);
     }
 }

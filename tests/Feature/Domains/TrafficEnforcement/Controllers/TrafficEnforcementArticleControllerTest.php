@@ -10,7 +10,6 @@ use Tests\TestCase;
 
 class TrafficEnforcementArticleControllerTest extends TestCase
 {
-    /** @test */
     public function it_can_display_a_list_of_articles()
     {
         // Crie um mock do seu repositório
